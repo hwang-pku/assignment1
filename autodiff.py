@@ -332,7 +332,6 @@ def gradients(output_node, node_list):
             lst = node.op.gradient(node, node_to_output_grad[node])
             if node.inputs[0] not in node_to_output_grads_list:
                 node_to_output_grads_list[node.inputs[0]]=[]
-
             node_to_output_grads_list[node.inputs[0]].append(lst[0])
             if len(node.inputs) == 2:
                 if node.inputs[1] not in node_to_output_grads_list:
